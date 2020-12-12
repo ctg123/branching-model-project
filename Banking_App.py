@@ -127,3 +127,34 @@ class Savings_Account(Bank_Account):
     def getSavingsBalance(self):
         print("\n You have a total balance of $", self.SMinBalance)
 
+
+# Create an object of the Bank superclass
+customer1_bank = Bank(628, "Chase Bank","Main Headquarters", "111 Polaris Parkway, Colombus, OH 43240")
+
+customer1_bank.getBankInfo()
+
+# Create an object of the Customer superclass
+customer1 = Customer(404, "John Doe", "1600 MLK St.", "1(800) 555-5555")
+
+# call member methods of the objects from the class.
+customer1.show_name()
+customer1.show_address()
+
+# Create an object of the Bank_Account subclass
+customer1_bank_info = Bank_Account("2300zs02", 404, "John Doe", "1600 MLK St.", "1(800) 555-5555")
+
+customer1_bank_info.get_id()
+customer1_bank_info.show_name()
+customer1_bank_info.getAccountInfo()
+customer1_bank_info.deposit()
+customer1_bank_info.withdraw()
+customer1_bank_info.getBalance()
+
+# Create an object of the Savings_Account subclass
+customer1_savings_acct = Savings_Account("2300zs02", 404, "John Doe", "1600 MLK st.", "1(800) 555-5555")
+
+customer1_savings_acct.getSavingsAccountInfo()
+customer1_savings_acct.savings_deposit()
+customer1_savings_acct.getSavingsBalance()
+customer1_savings_acct.savings_withdraw()
+
