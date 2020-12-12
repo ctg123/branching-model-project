@@ -92,3 +92,38 @@ class Bank_Account(Customer):
 
 # end of subclass definition for Bank Account
 
+class Savings_Account(Bank_Account):
+
+    # initializing the variables. Setting hard requirement for $5000 to open a Savings account.
+    SMinBalance = float(5000)
+
+    def __init__(self, account_id, customerID, custname, address, contactdetails):
+        super().__init__(account_id, customerID, custname, address, contactdetails)
+
+    def getSavingsAccountInfo(self):
+        self.SMinBalance = self.SMinBalance
+        print(" Customer_ID: ", self.customerID)
+        print(" Customer name: ", self.name)
+        print(" Customer Address: " + self.address) 
+        print(" Contact Information: " + str(self.contact_info))
+        print("\n You setup your Savings account with the amount of $", self.SMinBalance)
+        print("\n")
+
+    def savings_deposit(self):
+        amount = float(input("Enter the amount to deposit: "))
+        self.SMinBalance = self.SMinBalance + amount
+        print("You deposited $" + str(amount) + " into your Savings account.")
+        print("You're total amount is now: $", self.SMinBalance)
+
+    def savings_withdraw(self):
+        amount = float(input("Enter the amount to withdraw: "))
+        if self.SMinBalance - amount >= 5000:
+            self.SMinBalance -= amount
+            print("You withdrew $" + str(amount) + " from your account.")
+        else:
+        #self.balance = self.balance - amount
+            print(" You withdrew more than the minimum ammount required for your savings account.")
+
+    def getSavingsBalance(self):
+        print("\n You have a total balance of $", self.SMinBalance)
+
